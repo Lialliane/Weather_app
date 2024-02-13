@@ -5,11 +5,89 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>L-Weather app</title>
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
 <body>
+    <div class="main-container">
+        <form>
+            <input type="text" id="search-field" required placeholder="Enter city name" spellcheck="true">
+            <input type="submit" value="Search" id="submit-button" />
+        </form>
+        <div class="city-details">
+            <h1 id="city-name">
+                Amman
+            </h1>
+            <p id="weather-condition">Cloudy</p>
+            <p id="current-time">1:36 pm GMT+03:00,</p>
+            <p id="current-date">Sunday , 12/01/2024</p>
+        </div>
+        <div class="current-temp-container">
+                <p id="current-temp"> 19°C </p>
+                <img src="https://via.placeholder.com/280x280" id="current-weather-icon"  alt="Weather Icon"/>
+        </div>
+        <div class="additional-weather-details">
+            <button>additional details
+                <span class="material-symbols-outlined">
+                    arrow_drop_down</span>
+            </button>
+            <div class="additional-details-container">
+                <p> <span class="material-symbols-outlined">device_thermostat</span>
+                    Temp: Max <span id="max-temp">19°C</span>, Min <span id="min-temp">19°C</span>, Feels like <span id="feels-like">19°C</span>
+                </p>
+                <hr>
+                <p>
+                    <span class="material-symbols-outlined">
+humidity_percentage
+</span> Humidity: <span id="humidity">19%</span>
 
+                </p>
+                <hr>
+                <p>
+                    <span class="material-symbols-outlined">av_timer</span>
+                    <span class="material-symbols-outlined">swap_driving_apps_wheel</span>
+                    Pressure: <span id="pressure">1023</span>
+                </p>
+                <p>
+                    <span class="material-symbols-outlined">air</span>
+                    Wind: <span id="wind-speed">19 km/h</span>
+                </p>
+            </div>
+        </div>
+        <div class="week-weather-forecast">
+            <div class="week-weather-today-container">
+                <div class="week-weather-today">
+                    <b>
+                    Today
+                    </b>
+                        <p id="day-1-temp">19°C</p>
+                    </div>
+                <img class="week-weather-today-icon" alt="Today Weather"></img>
+            </div>
+            <div class="week-weather-container">
+                <div class="week-weather-tomorrow">
+                    <b id="day-2-date">
+                        Tue 13
+                    </b>
+                    <p id="day-2-temp">18°C</p>
+                </div>
+                <img class="week-weather-tomorrow-icon" alt="Today Weather"></img>
+            </div>
+            <div class="week-weather-container">
+                <div class="week-weather-dayafter">
+                    <b id="day-3-date">
+                        Tue 14
+                    </b>
+                    <p id="day-3-temp">18°C</p>
+                </div>
+                <img class="week-weather-dayafter-icon" alt="Today Weather"></img>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <img src="https://via.placeholder.com/280x280" alt="Weather Icon" class="footer-icon"/>
+    </footer>
 </body>
 <script>
     let ipURL = 'http://ip-api.com/json/';
