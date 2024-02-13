@@ -1,4 +1,173 @@
 body {
     background: #FFE4C9;
+    font-family: Merriweather;
 }
 
+.main-container{
+    margin: 44px auto;
+    padding: 37px 42px;
+    background: #FFF7F1;
+    box-shadow: 0px 11px 2px 4px rgba(231, 136, 149, 0.54);
+    border-radius: 47px;
+    width: 70%;
+    color: #5C6665;
+}
+#search-field {
+    background: white;
+    border-radius: 46.50px;
+    border: 1px #BED1CF solid;
+    width: 65%;
+    height: 55px;
+    padding-left: 45px;
+    font-size: 25px;
+}
+#submit-button{
+    background: #E78895;
+    border-radius: 52px;
+    width: 19%;
+    height: 55px;
+    border: none;
+    color: white;
+    font-family: "Karla", sans-serif;
+    font-weight: bolder;
+    font-size: 25px;
+    margin-left: 50px;
+}
+.city-weather-details-container{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 17px 0px;
+}
+.current-temp-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.city-details{
+    font-size: 35px;
+}
+#city-name{
+    font-size: 50px;
+    font-weight: 800;
+    font-family: 'Merriweather Sans';
+    margin: 0 0 8px 0;
+}
+#weather-condition{
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+#current-time{
+    margin-bottom: 15px;
+    font-size: 25px;
+}
+#current-date{
+    font-size: 25px;
+}
+#current-temp{
+    color: #5C6665;
+    font-size: 70px;
+    position: relative;
+    bottom: 32px;
+    font-family: 'Merriweather Sans';
+}
+#current-weather-icon{
+    width: 205px;
+}
+.additional-details-button{
+    text-align: left;
+    background: none;
+    height: 60px;
+    border: none;
+    color: #E78895;
+    font-size: 30px;
+    padding: 0;
+    margin-left: 13px;
+    margin-bottom: 25px;
+}
+.additional-details-container{
+    border: 1px #E78895 solid;
+    border-radius: 37px;
+    padding: 20px;
+    color: #262626;
+    font-size: 30px;
+}
+.temp-space{
+ margin-right: 54px;
+}
+#max-temp{
+    color: #5C6665;
+    font-weight: 400;
+}
+#min-temp{
+    color: #5C6665;
+    font-weight: 400;
+}
+#feels-like{
+    color: #5C6665;
+    font-weight: 400;
+}
+#humidity{
+    color: #5C6665;
+    font-weight: 400;
+}
+#pressure{
+    color: #5C6665;
+    font-weight: 400;
+}
+#wind-speed{
+    color: #5C6665;
+    font-weight: 400;
+}
+.week-weather-forecast{
+    display: flex;
+    color: black;
+    font-size: 25px;
+    justify-content: space-between;
+    margin: 35px 8px 0px;
+}
+.week-weather-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#day-1-temp{
+    color: #5C6665;
+    font-size: 30px;
+}
+#day-2-temp{
+    color: #5C6665;
+    font-size: 30px;
+}
+#day-3-temp{
+    color: #5C6665;
+    font-size: 30px;
+}
+.week-weather-icon{
+    width: 166px;
+    height: 166px;
+}
+.footer-icon{
+    width: 263px;
+    margin: 0px 0px 9px 30px;
+}
+
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 40px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    top: 10px;
+    margin-right: 12px;
+}

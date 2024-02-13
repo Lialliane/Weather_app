@@ -6,8 +6,13 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>L-Weather app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Merriweather Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="src/style.css">
 </head>
 <body>
     <div class="main-container">
@@ -15,40 +20,42 @@
             <input type="text" id="search-field" required placeholder="Enter city name" spellcheck="true">
             <input type="submit" value="Search" id="submit-button" />
         </form>
-        <div class="city-details">
-            <h1 id="city-name">
+        <span class="city-weather-details-container">
+            <div class="city-details">
+                <h1 id="city-name">
                 Amman
-            </h1>
-            <p id="weather-condition">Cloudy</p>
-            <p id="current-time">1:36 pm GMT+03:00,</p>
-            <p id="current-date">Sunday , 12/01/2024</p>
-        </div>
-        <div class="current-temp-container">
-                <p id="current-temp"> 19°C </p>
-                <img src="https://via.placeholder.com/280x280" id="current-weather-icon"  alt="Weather Icon"/>
-        </div>
+                </h1>
+                <p id="weather-condition">Cloudy</p>
+                <p id="current-time">1:36 pm GMT+03:00,</p>
+                <p id="current-date">Sunday , 12/01/2024</p>
+            </div>
+                <div class="current-temp-container">
+                    <p id="current-temp"> 19°C </p>
+                    <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png" id="current-weather-icon"  alt="Weather Icon"/>
+                </div>
+        </span>
         <div class="additional-weather-details">
-            <button>additional details
+            <button class="additional-details-button">Additional Details
                 <span class="material-symbols-outlined">
-                    arrow_drop_down</span>
+                    arrow_drop_down
+                </span>
             </button>
             <div class="additional-details-container">
                 <p> <span class="material-symbols-outlined">device_thermostat</span>
-                    Temp: Max <span id="max-temp">19°C</span>, Min <span id="min-temp">19°C</span>, Feels like <span id="feels-like">19°C</span>
+                    Temp:<span class="temp-space"></span> Max <span id="max-temp">19°C</span>,<span class="temp-space"></span> Min <span id="min-temp">19°C</span>,<span class="temp-space"></span> Feels like <span id="feels-like">19°C</span>
                 </p>
                 <hr>
                 <p>
-                    <span class="material-symbols-outlined">
-humidity_percentage
-</span> Humidity: <span id="humidity">19%</span>
+                    <span class="material-symbols-outlined">humidity_percentage
+                    </span> Humidity: <span id="humidity">19%</span>
 
                 </p>
                 <hr>
                 <p>
-                    <span class="material-symbols-outlined">av_timer</span>
                     <span class="material-symbols-outlined">swap_driving_apps_wheel</span>
                     Pressure: <span id="pressure">1023</span>
                 </p>
+                <hr>
                 <p>
                     <span class="material-symbols-outlined">air</span>
                     Wind: <span id="wind-speed">19 km/h</span>
@@ -56,14 +63,14 @@ humidity_percentage
             </div>
         </div>
         <div class="week-weather-forecast">
-            <div class="week-weather-today-container">
+            <div class="week-weather-container">
                 <div class="week-weather-today">
                     <b>
                     Today
                     </b>
-                        <p id="day-1-temp">19°C</p>
-                    </div>
-                <img class="week-weather-today-icon" alt="Today Weather"></img>
+                    <p id="day-1-temp">19°C</p>
+                </div>
+                <img class="week-weather-icon" alt="Today Weather" src="https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-03-512.png" />
             </div>
             <div class="week-weather-container">
                 <div class="week-weather-tomorrow">
@@ -72,7 +79,7 @@ humidity_percentage
                     </b>
                     <p id="day-2-temp">18°C</p>
                 </div>
-                <img class="week-weather-tomorrow-icon" alt="Today Weather"></img>
+                <img class="week-weather-icon" alt="Today Weather" src="https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-03-512.png" />
             </div>
             <div class="week-weather-container">
                 <div class="week-weather-dayafter">
@@ -81,12 +88,12 @@ humidity_percentage
                     </b>
                     <p id="day-3-temp">18°C</p>
                 </div>
-                <img class="week-weather-dayafter-icon" alt="Today Weather"></img>
+                <img class="week-weather-icon" alt="Today Weather" src="https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-03-512.png"/>
             </div>
         </div>
     </div>
     <footer>
-        <img src="https://via.placeholder.com/280x280" alt="Weather Icon" class="footer-icon"/>
+        <img src="https://www.shecodes.io/assets/branding/logo-shecodes-f9fa0540d113c086f61eb6e89466c0cbd24a42163b6a96d4b01da078803f53ee.png" alt="Weather Icon" class="footer-icon"/>
     </footer>
 </body>
 <script>
