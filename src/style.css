@@ -4,34 +4,35 @@ body {
 }
 
 .main-container{
-    margin: 44px auto;
+    margin: 56px auto;
     padding: 37px 42px;
     background: #FFF7F1;
     box-shadow: 0px 11px 2px 4px rgba(231, 136, 149, 0.54);
     border-radius: 47px;
-    width: 70%;
+    width: 65%;
     color: #5C6665;
+    min-width: 500px;
 }
 #search-field {
     background: white;
     border-radius: 46.50px;
     border: 1px #BED1CF solid;
-    width: 65%;
-    height: 55px;
-    padding-left: 45px;
-    font-size: 25px;
+    width: 63%;
+    height: 50px;
+    padding-left: 33px;
+    font-size: 22px;
 }
 #submit-button{
     background: #E78895;
     border-radius: 52px;
     width: 19%;
-    height: 55px;
+    height: 50px;
     border: none;
     color: white;
     font-family: "Karla", sans-serif;
     font-weight: bolder;
     font-size: 25px;
-    margin-left: 50px;
+    margin-left: 35px;
 }
 .city-weather-details-container{
     display: flex;
@@ -47,51 +48,142 @@ body {
     font-size: 35px;
 }
 #city-name{
-    font-size: 50px;
+    font-size: 46px;
     font-weight: 800;
     font-family: 'Merriweather Sans';
     margin: 0 0 8px 0;
 }
 #weather-condition{
     font-weight: bold;
-    font-size: 30px;
+    font-size: 29px;
     margin-bottom: 15px;
 }
 #current-time{
     margin-bottom: 15px;
-    font-size: 25px;
+    font-size: 24px;
 }
 #current-date{
-    font-size: 25px;
+    font-size: 24px;
 }
 #current-temp{
     color: #5C6665;
-    font-size: 70px;
+    font-size: 68px;
     position: relative;
     bottom: 32px;
     font-family: 'Merriweather Sans';
 }
 #current-weather-icon{
-    width: 205px;
+    width: 195px;
 }
 .additional-details-button{
     text-align: left;
     background: none;
-    height: 60px;
     border: none;
     color: #E78895;
-    font-size: 30px;
+    font-size: 23px;
     padding: 0;
-    margin-left: 13px;
-    margin-bottom: 25px;
+    margin-left: 16px;
+    margin-bottom: 16px;
+    font-weight: bold;
 }
-.additional-details-container{
+#arrow{
+    transform: rotate(0deg);
+}
+#additional-details-container{
     border: 1px #E78895 solid;
+    display: block;
     border-radius: 37px;
-    padding: 20px;
+    padding: 6px 20px 18px;
     color: #262626;
-    font-size: 30px;
+    font-size: 26px;
+    position: absolute;
+    opacity:0;
+    animation-direction: normal;
+
 }
+.animationConainer1{
+    animation: open 300ms ease-in-out;
+    animation-fill-mode: forwards;
+}
+.rotateArrowOpen{
+    animation: rotate 300ms ease-in-out;
+    animation-fill-mode: forwards;
+}
+.animationConainer2{
+    animation: move 300ms ease-in-out;
+    animation-fill-mode: forwards;
+}
+.animationConainer1Reverse{
+    animation: close 300ms ease-in-out;
+    animation-fill-mode: forwards;
+}
+.rotateArrowClose{
+    animation: rotateBack 300ms ease-in-out;
+    animation-fill-mode: forwards;
+}
+.animationConainer2Reverse{
+    animation: moveBack 300ms ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes open {
+    0% {
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes close {
+    from {
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes move {
+    from {
+        margin-top: 10px;
+    }
+    to {
+        margin-top: 301px;
+    }
+}
+
+@keyframes moveBack {
+    from {
+        margin-top: 301px;
+
+    }
+    to {
+        margin-top: 10px;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+}
+@keyframes rotateBack {
+    from {
+        transform: rotate(180deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
 .temp-space{
  margin-right: 54px;
 }
@@ -119,13 +211,15 @@ body {
     color: #5C6665;
     font-weight: 400;
 }
-.week-weather-forecast{
+#week-weather-forecast{
     display: flex;
     color: black;
-    font-size: 25px;
+    font-size: 23px;
     justify-content: space-between;
-    margin: 35px 8px 0px;
+    animation-direction: normal;
+    margin-top: 10px
 }
+
 .week-weather-container{
     display: flex;
     flex-direction: row;
@@ -145,8 +239,8 @@ body {
     font-size: 30px;
 }
 .week-weather-icon{
-    width: 166px;
-    height: 166px;
+    width: 150px;
+    height: 150px;
 }
 .footer-icon{
     width: 263px;

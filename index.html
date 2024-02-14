@@ -36,11 +36,11 @@
         </span>
         <div class="additional-weather-details">
             <button class="additional-details-button">Additional Details
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-outlined" id="arrow">
                     arrow_drop_down
                 </span>
             </button>
-            <div class="additional-details-container">
+            <div id="additional-details-container">
                 <p> <span class="material-symbols-outlined">device_thermostat</span>
                     Temp:<span class="temp-space"></span> Max <span id="max-temp">19°C</span>,<span class="temp-space"></span> Min <span id="min-temp">19°C</span>,<span class="temp-space"></span> Feels like <span id="feels-like">19°C</span>
                 </p>
@@ -62,7 +62,7 @@
                 </p>
             </div>
         </div>
-        <div class="week-weather-forecast">
+        <div id="week-weather-forecast">
             <div class="week-weather-container">
                 <div class="week-weather-today">
                     <b>
@@ -96,12 +96,5 @@
         <img src="https://www.shecodes.io/assets/branding/logo-shecodes-f9fa0540d113c086f61eb6e89466c0cbd24a42163b6a96d4b01da078803f53ee.png" alt="Weather Icon" class="footer-icon"/>
     </footer>
 </body>
-<script>
-    let ipURL = 'http://ip-api.com/json/';
-    let timeURL = "http://worldtimeapi.org/api/";
-    axios.get(ipURL).then(function(response){
-        console.log(response)
-            });
-
-</script>
+<script src="src/script.js"></script>
 </html>
