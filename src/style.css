@@ -38,6 +38,7 @@ body {
     display: flex;
     justify-content: space-between;
     margin: 30px 17px 0px;
+
 }
 .current-temp-container{
     display: flex;
@@ -97,6 +98,7 @@ body {
     color: #262626;
     font-size: 26px;
     position: absolute;
+    width: 60%;
     opacity:0;
     animation-direction: normal;
 
