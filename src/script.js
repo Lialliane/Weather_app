@@ -1,4 +1,4 @@
-let ipURL = '/api/';
+let ipURL = 'https://ipapi.co/json/';
 let key = '051f2c33e4acf0eb6efa3eaab379t3o3';
 var city = '';
 
