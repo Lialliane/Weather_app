@@ -16,12 +16,23 @@ body {
 #search-field {
     background: white;
     border-radius: 46.50px;
-    border: 1px #BED1CF solid;
+    border: 1px #E78895 solid;
     width: 63%;
     height: 50px;
     padding-left: 33px;
     font-size: 22px;
 }
+#search-field:focus{
+    outline: 2px #E78895 solid;
+}
+#search-field-invalid{
+    border: 1px red solid;
+}
+
+#search-field-invalid:focus{
+    outline: 2px red solid;
+}
+
 #submit-button{
     background: #E78895;
     border-radius: 52px;
@@ -34,6 +45,37 @@ body {
     font-size: 25px;
     margin-left: 35px;
 }
+
+
+.error-message{
+    padding-left: 28px;
+    padding-top: 7px;
+    color: red;
+    animation: error 300ms ease-in-out;
+}
+
+@keyframes error{
+    0%{
+        padding-left: 24px;
+    }
+    20%{
+        padding-left: 28px;
+    }
+    40%{
+        padding-left: 24px;
+    }
+    60%{
+        padding-left: 28px;
+    }
+    80%{
+        padding-left: 24px;
+    }
+    100%{
+        padding-left: 28px;
+    }
+}
+
+
 .city-weather-details-container{
     display: flex;
     justify-content: space-between;
