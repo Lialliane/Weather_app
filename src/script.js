@@ -1,10 +1,10 @@
-let ipURL = 'https://ipapi.co/json/';
+let ipURL = 'https://json.geoiplookup.io/';
 let key = '051f2c33e4acf0eb6efa3eaab379t3o3';
 var city = '';
 
 axios.get(ipURL).then(function(response){
     console.log(response);
-    city = response.data.city;
+    city = response.data.region;
     let weatherUrlShort = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${key}&units=metric`;
     console.log(weatherUrlShort);
     axios.get(weatherUrlShort).then(updateCity).catch(showErrorAfterSubmit);
