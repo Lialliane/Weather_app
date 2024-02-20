@@ -43,29 +43,38 @@ function updateCity(response){
 
 function updateDetailsAndWeek(response){
     console.log(response);
+
     let maxTemp = document.querySelector("#max-temp");
     let minTemp = document.querySelector("#min-temp");
     maxTemp.innerHTML = Math.round(response.data.daily[0].temperature.maximum) + "°C";
     minTemp.innerHTML = Math.round(response.data.daily[0].temperature.minimum) + "°C";
 
-    let weekWeather = document.querySelector("#week-weather-forecast");
-    let dayOneTemp = document.querySelector("#day-1-temp");
-    let dayOneIcon = document.querySelector("#day-1-icon");
-    let dayTwoTemp = document.querySelector("#day-2-temp");
-    let dayTwoDate = document.querySelector("#day-2-date");
-    let dayTwoIcon = document.querySelector("#day-2-icon");
-    let dayThreeTemp = document.querySelector("#day-3-temp");
-    let dayThreeDate = document.querySelector("#day-3-date");
-    let dayThreeIcon = document.querySelector("#day-3-icon");
+    let weekForecastElement = document.querySelector("#week-weather-forecast");
+    var ForecastHtml = "";
 
-    dayOneTemp.innerHTML = Math.round(response.data.daily[1].temperature.day) + "°C";
-    dayOneIcon.setAttribute("src", response.data.daily[1].condition.icon_url);
-    dayTwoTemp.innerHTML = Math.round(response.data.daily[2].temperature.day) + "°C";
-    dayTwoDate.innerHTML = formatDate(1, false);
-    dayTwoIcon.setAttribute("src", response.data.daily[2].condition.icon_url);
-    dayThreeTemp.innerHTML = Math.round(response.data.daily[3].temperature.day) + "°C";
-    dayThreeDate.innerHTML = formatDate(2, false);
-    dayThreeIcon.setAttribute("src", response.data.daily[3].condition.icon_url);
+    response.data.daily.every(function(day, index){
+        console.log(day);
+        console.log(index);
+        ForecastHtml += `<div class="week-weather-container">
+                <div class="week-weather">
+                    <b class="week-day-date">
+                    ${formatDate(false, day.time)}
+                    </b>
+                    <p class="week-day-temp">${(Math.round(day.temperature.maximum)<10)?"0"+Math.round(day.temperature.maximum):Math.round(day.temperature.maximum)}°C
+                    ${(Math.round(day.temperature.minimum)<10)?"0"+Math.round(day.temperature.minimum):Math.round(day.temperature.minimum)}°C
+                    </p>
+
+                </div>
+                <img class="week-weather-icon"  src="${day.condition.icon_url}"  />
+            </div>`;
+        if(index==4){
+            return false;
+        }
+        return true;
+
+    })
+    weekForecastElement.innerHTML = ForecastHtml;
+
 }
 
 let form = document.querySelector("form");
@@ -88,6 +97,7 @@ searchField.addEventListener("keydown", function(event){
         }
     },500);
 })
+
 form.addEventListener("submit", function(event){
     event.preventDefault();
     city = document.querySelector("#search-field").value;
@@ -95,18 +105,52 @@ form.addEventListener("submit", function(event){
     axios.get(weatherUrlShort).then(updateCity).catch(showErrorAfterSubmit);
 })
 
+function showError(error){
+    var errorMessage = '';
+    let input = document.querySelector("#search-field");
+    let errorElement = document.querySelector(".error");
+    console.log(input.validity);
+    console.log(error);
+
+    if(input.validity.valueMissing){
+        errorMessage = "You need to enter a city";
+    }
+    else if(input.validity.typeMismatch){
+        errorMessage = "Please enter a valid city name";
+    }
+    else if(input.validity.patternMismatch){
+        errorMessage = "Please enter letters only";
+    }
+
+    else if(error=="not-found"){
+        errorMessage = "Please enter a valid city name";
+    }
+
+    errorElement.classList.add("error-message");
+    errorElement.innerHTML = errorMessage;
+}
+
+function showErrorAfterSubmit(error){
+    var errorMessage = 'Sorry, something went wrong. Please try again';
+    let errorElement = document.querySelector(".error");
+
+    errorElement.classList.add("error-message");
+    errorElement.innerHTML = errorMessage;
+}
+
 var currentDate = document.querySelector("#current-date");
 var currentTime = document.querySelector("#current-time");
 currentDate.innerHTML = formatDate();
 currentTime.innerHTML = formatTime();
 
-function formatDate(dayOffSet = 0, toggleFomrat = true){
-    var dateData = new Date();
+function formatDate( toggleFomrat = true, timestamp = 0){
+
+    var dateData = (timestamp == 0) ? new Date() : new Date(timestamp*1000);
     var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul","Aug", "Sep", "Oct", "Nov", "Dec"];
 ;
     var day = dateData.getDay();
-    var date = dateData.getDate()+dayOffSet;
+    var date = dateData.getDate();
     var month = dateData.getMonth();
     var year = dateData.getFullYear();
     if(toggleFomrat){
@@ -164,35 +208,5 @@ expandButton.addEventListener("click", function(){
 })
 
 
-function showError(error){
-    var errorMessage = '';
-    let input = document.querySelector("#search-field");
-    let errorElement = document.querySelector(".error");
-    console.log(input.validity);
-    console.log(error);
 
-     if(input.validity.valueMissing){
-        errorMessage = "You need to enter a city";
-    }
-    else if(input.validity.typeMismatch){
-        errorMessage = "Please enter a valid city name";
-    }
-    else if(input.validity.patternMismatch){
-        errorMessage = "Please enter letters only";
-    }
 
-    else if(error=="not-found"){
-        errorMessage = "Please enter a valid city name";
-    }
-
-    errorElement.classList.add("error-message");
-    errorElement.innerHTML = errorMessage;
-}
-
-function showErrorAfterSubmit(error){
-    var errorMessage = 'Sorry, something went wrong. Please try again';
-    let errorElement = document.querySelector(".error");
-
-    errorElement.classList.add("error-message");
-    errorElement.innerHTML = errorMessage;
-}

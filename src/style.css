@@ -25,13 +25,6 @@ body {
 #search-field:focus{
     outline: 2px #E78895 solid;
 }
-#search-field-invalid{
-    border: 1px red solid;
-}
-
-#search-field-invalid:focus{
-    outline: 2px red solid;
-}
 
 #submit-button{
     background: #E78895;
@@ -143,6 +136,7 @@ body {
     width: 60%;
     opacity:0;
     animation-direction: normal;
+    pointer-events: none;
 
 }
 .animationConainer1{
@@ -194,20 +188,20 @@ body {
 }
 @keyframes move {
     from {
-        margin-top: 10px;
+        margin-top: 23px;
     }
     to {
-        margin-top: 301px;
+        margin-top: 311px;
     }
 }
 
 @keyframes moveBack {
     from {
-        margin-top: 301px;
+        margin-top: 311px;
 
     }
     to {
-        margin-top: 10px;
+        margin-top: 23px;
     }
 }
 
@@ -231,37 +225,18 @@ body {
 .temp-space{
  margin-right: 54px;
 }
-#max-temp{
+#max-temp,#min-temp,#feels-like,#humidity,#pressure,#wind-speed{
     color: #5C6665;
     font-weight: 400;
 }
-#min-temp{
-    color: #5C6665;
-    font-weight: 400;
-}
-#feels-like{
-    color: #5C6665;
-    font-weight: 400;
-}
-#humidity{
-    color: #5C6665;
-    font-weight: 400;
-}
-#pressure{
-    color: #5C6665;
-    font-weight: 400;
-}
-#wind-speed{
-    color: #5C6665;
-    font-weight: 400;
-}
+
 #week-weather-forecast{
     display: flex;
     color: black;
-    font-size: 23px;
+    font-size: 20px;
     justify-content: space-between;
     animation-direction: normal;
-    margin-top: 10px
+    margin-top: 23px;
 }
 
 .week-weather-container{
@@ -270,22 +245,18 @@ body {
     align-items: center;
 }
 
-#day-1-temp{
+.week-day-temp{
     color: #5C6665;
-    font-size: 30px;
+    font-size: 24px;
+    margin-top: 9px;
+
 }
-#day-2-temp{
-    color: #5C6665;
-    font-size: 30px;
+
+.week-day-date{
+    width: 65px;
 }
-#day-3-temp{
-    color: #5C6665;
-    font-size: 30px;
-}
-.week-weather-icon{
-    width: 150px;
-    height: 150px;
-}
+
+
 .credits{
     text-align: center;
     color: #5C6665;
