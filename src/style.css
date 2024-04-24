@@ -96,9 +96,8 @@ body {
 }
 #current-time{
     margin-bottom: 15px;
-    font-size: 24px;
 }
-#current-date{
+#current-date,#current-time{
     font-size: 24px;
 }
 #current-temp{
@@ -118,7 +117,7 @@ body {
     color: #E78895;
     font-size: 23px;
     padding: 0;
-    margin-left: 16px;
+    margin-left: 29px;
     margin-bottom: 16px;
     font-weight: bold;
 }
@@ -133,7 +132,7 @@ body {
     color: #262626;
     font-size: 26px;
     position: absolute;
-    width: 60%;
+    width: 58%;
     opacity:0;
     animation-direction: normal;
     pointer-events: none;
@@ -191,13 +190,13 @@ body {
         margin-top: 23px;
     }
     to {
-        margin-top: 311px;
+        margin-top: 347px;
     }
 }
 
 @keyframes moveBack {
     from {
-        margin-top: 311px;
+        margin-top: 347px;
 
     }
     to {
@@ -243,6 +242,10 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding: 0px;
+}
+.week-weather{
+    padding: 0px;
 }
 
 .week-day-temp{
@@ -254,6 +257,10 @@ body {
 
 .week-day-date{
     width: 65px;
+}
+.week-day-icon{
+
+    width: 65%;
 }
 
 
@@ -293,4 +300,269 @@ a:visited {
     position: relative;
     top: 10px;
     margin-right: 12px;
+}
+@media (max-width: 1200px) {
+    #current-temp {
+        font-size: 59px;
+        bottom: 12px;
+    }
+    #current-weather-icon {
+        width: 180px;
+    }
+    #city-name {
+        font-size: 40px;
+
+    }
+    #weather-condition {
+        font-size: 27px;
+    }
+    #current-date,#current-time{
+        font-size: 22px;
+    }
+
+    .additional-details-button {
+
+        font-size: 21px;
+    }
+
+    #additional-details-container {
+        font-size: 23px;
+    }
+    .material-symbols-outlined {
+        font-size: 33px;
+    }
+
+}
+
+@media (max-width: 1025px) {
+    #submit-button {
+        width: 25%;
+        font-size: 21px;
+    }
+    #search-field {
+
+        font-size: 20px;
+    }
+    .current-temp-container{
+        position: relative;
+        right: -51px;
+    }
+    #current-temp {
+        font-size: 50px;
+        bottom: 0px;
+    }
+    #current-weather-icon {
+        width: 150px;
+    }
+    #city-name {
+        font-size: 36px;
+
+    }
+    #weather-condition {
+        font-size: 25px;
+    }
+    #current-date,#current-time{
+        font-size: 19px;
+    }
+    .additional-details-button {
+
+        font-size: 20px;
+    }
+
+    #additional-details-container {
+        font-size: 18px;
+        width: 56%;
+    }
+    .material-symbols-outlined {
+        font-size: 30px;
+    }
+
+    .week-day-temp, .week-day-date{
+        font-size: 20px;
+    }
+    @keyframes move {
+        from {
+            margin-top: 23px;
+        }
+        to {
+            margin-top: 307px;
+        }
+    }
+
+    @keyframes moveBack {
+        from {
+            margin-top: 307px;
+
+        }
+        to {
+            margin-top: 23px;
+        }
+    }
+}
+@media (max-width: 865px) {
+    #submit-button {
+        width: 27%;
+        font-size: 16px;
+        height: 42px;
+
+    }
+    #search-field {
+        font-size: 16px;
+        height: 42px;
+        padding-left: 22px;
+    }
+    .city-details {
+        text-align: center;
+    }
+    #city-name {
+        font-size: 34px;
+        margin-top: 11px;
+    }
+    #current-time, #current-date {
+        font-size: 18px;
+    }
+    #current-temp {
+        font-size: 36px;
+        width: 150px;
+        text-align: end;
+    }
+    .current-temp-container {
+        justify-content: center;
+        position: static;
+    }
+    #current-weather-icon {
+        width: 150px;
+    }
+    .additional-weather-details{
+        text-align: center;
+    }
+    .additional-details-button{
+        margin-left: 0px;
+    }
+    #additional-details-container {
+        font-size: 15px;
+        text-align: left;
+    }
+    .material-symbols-outlined {
+        font-size: 24px;
+    }
+}
+@media (max-width: 750px) {
+    #current-temp {
+        width: 115px;
+    }
+    #current-weather-icon {
+        width: 115px;
+    }
+    #additional-details-container {
+        width: 405px;
+    }
+    .week-day-temp, .week-day-date{
+        font-size: 18px;
+    }
+    .week-day-icon {
+        width: 80%;
+    }
+    .credits{
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 530px) {
+    .main-container {
+        min-width: 88%;
+    }
+
+    #search-field {
+        width: 61%;
+        font-size: 15px;
+    }
+    #submit-button {
+        width: 28%;
+        font-size: 14px;
+        margin-left: 24px;
+    }
+    #additional-details-container {
+        font-size: 14px;
+        width: 72%;
+    }
+    .material-symbols-outlined {
+        font-size: 20px;
+    }
+    .credits {
+        font-size: 18px;
+    }
+    .footer-icon {
+        width: 180px;
+    }
+
+}
+@media (max-width: 400px) {
+
+    .main-container {
+        padding: 22px 15px;
+        border-radius: 17px;
+    }
+
+    #search-field {
+        font-size: 13px;
+        height: 36px;
+        padding-left: 20px;
+        padding-bottom: 5px;
+        width: 59%;
+    }
+    #submit-button {
+        width: 28%;
+        font-size: 12px;
+        margin-left: 18px;
+        height: 36px
+    }
+    .city-weather-details-container {
+        margin-top:17px;
+    }
+    #city-name {
+        font-size: 28px;
+
+    }
+    #weather-condition {
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+    #current-time,#current-time{
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    #current-temp {
+        font-size: 29px;
+        width: 80px;
+    }
+    #current-weather-icon {
+        width: 80px;
+    }
+    .additional-details-button {
+        font-size: 16px;
+    }
+    #additional-details-container {
+        font-size: 12px;
+        width: 78%;
+    }
+    .week-day-date, .week-day-temp {
+        font-size: 14px;
+    }
+    .credits {
+        font-size: 15px;
+    }
+    .footer-icon {
+        width: 100px;
+    }
+}
+@media (max-width: 325px) {
+    #additional-details-container {
+        width: 82%;
+        position: absolute;
+        left: 25px;
+    }
+    .week-day-date{
+        display: inline !important;
+    }
 }
