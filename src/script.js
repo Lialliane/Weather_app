@@ -55,9 +55,9 @@ function updateDetailsAndWeek(response){
     response.data.daily.every(function(day, index){
         console.log(day);
         console.log(index);
-        ForecastHtml += `<div class="week-weather-container">
-                <div class="week-weather">
-                    <b class="week-day-date">
+        ForecastHtml += `<div class="week-weather-container d-lg-flex flex-lg-row flex-column col-2 container ">
+                <div class="week-weather col-6">
+                    <b class="week-day-date d-block">
                     ${formatDate(false, day.time)}
                     </b>
                     <p class="week-day-temp">${(Math.round(day.temperature.maximum)<10)?"0"+Math.round(day.temperature.maximum):Math.round(day.temperature.maximum)}°C
@@ -65,7 +65,7 @@ function updateDetailsAndWeek(response){
                     </p>
 
                 </div>
-                <img class="week-weather-icon"  src="${day.condition.icon_url}"  />
+                <img class="week-day-icon img-fluid col-6"  src="${day.condition.icon_url}"  />
             </div>`;
         if(index==4){
             return false;
